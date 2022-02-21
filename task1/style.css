@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.main__content{
+    flex: 1 1;
+    display: flex;
+}
+
+.header,
+.footer {
+    background: #ccc;
+}
+
+/* Панель 2 */
+.right-side{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+}
+
+.content {
+  background: yellow;
+}
+
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Панель 1 */
+.side-1 {
+  background: green;
+}
+
+/* Контент */
+.side-2 {
+  background: red;
+}
+
+.side-1,
+.side-2{
+    width: 400px;
+
+    /*Для растягивания блоков*/
+    /* overflow: auto;
+    resize: vertical; */
+}
+
+.img-wrap{
+    height: 300px;
+    width: 150px;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+}
+.img-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+p{
+    margin: 10px;
+}
+
+.side-mobile{
+    display: none;
+}
+
+@media (max-width: 1024px){
+    .side-mobile{
+        display: block;
+    }
+
+    .right-side{
+        flex: 0 0;
+    }
+
+    .side-1,
+    .side-2{
+        width: 100%;
+    }
+
+    .main__content{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .side-2:not(.side-mobile){
+        display: none;
+    }
+}
